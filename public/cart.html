@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - E-Commerce Store</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-container">
+          <h1 class="nav-logo"><a href="/">E-Store</a></h1>
+          <div class="nav-menu">
+            <a href="/" class="nav-link">🏠 Home</a>
+            <div
+              id="user-menu"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                flex-wrap: nowrap;
+                max-width: 300px;
+              "
+            >
+              <span
+                id="username-display"
+                style="
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  max-width: 150px;
+                "
+              ></span>
+              <button
+                id="logout-btn"
+                class="btn btn-secondary"
+                style="flex-shrink: 0"
+              >
+                🚪 Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <h2>Shopping Cart</h2>
+        <div id="cart-container">
+          <div id="cart-items">
+            <!-- Cart items will be loaded here -->
+          </div>
+          <div id="cart-summary">
+            <div class="summary-item">
+              <span>Total: $<span id="cart-total">0.00</span></span>
+            </div>
+            <button id="checkout-btn" class="btn btn-primary">
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+        <div id="empty-cart" style="display: none">
+          <p>Your cart is empty. <a href="/">Continue shopping</a></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="cart.js"></script>
+  </body>
+</html>

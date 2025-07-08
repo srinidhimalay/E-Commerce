@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - E-Commerce Store</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-container">
+          <h1 class="nav-logo"><a href="/">E-Store Admin</a></h1>
+          <div class="nav-menu">
+            <a href="/" class="nav-link">Home</a>
+            <button id="logout-btn" class="btn btn-secondary">Logout</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="admin-container">
+        <div class="admin-tabs">
+          <button class="tab-btn active" data-tab="products">Products</button>
+          <button class="tab-btn" data-tab="users">Users</button>
+        </div>
+
+        <div id="products-tab" class="tab-content active">
+          <div class="admin-section">
+            <h2>Product Management</h2>
+            <button id="add-product-btn" class="btn btn-primary">
+              Add New Product
+            </button>
+
+            <div id="product-form" class="form-container" style="display: none">
+              <h3 id="form-title">Add Product</h3>
+              <form id="product-form-element">
+                <input type="hidden" id="product-id" />
+                <div class="form-group">
+                  <label for="product-name">Name:</label>
+                  <input type="text" id="product-name" required />
+                </div>
+                <div class="form-group">
+                  <label for="product-description">Description:</label>
+                  <textarea id="product-description" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="product-price">Price:</label>
+                  <input
+                    type="number"
+                    id="product-price"
+                    step="0.01"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="product-image">Image URL (Website Link):</label>
+                  <input
+                    type="url"
+                    id="product-image"
+                    placeholder="https://example.com/image.jpg"
+                    required
+                  />
+                  <small style="color: #888; display: block; margin-top: 5px">
+                    Enter a direct link to an image from any website (jpg, png,
+                    gif, webp)
+                  </small>
+                  <div
+                    id="image-preview"
+                    style="margin-top: 10px; display: none"
+                  >
+                    <img
+                      id="preview-img"
+                      style="
+                        max-width: 200px;
+                        max-height: 150px;
+                        border-radius: 8px;
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                      "
+                      alt="Image preview"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="product-stock">Stock Quantity:</label>
+                  <input type="number" id="product-stock" required />
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">
+                    Save Product
+                  </button>
+                  <button
+                    type="button"
+                    id="cancel-product"
+                    class="btn btn-secondary"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div id="products-list" class="admin-list">
+              <!-- Products will be loaded here -->
+            </div>
+          </div>
+        </div>
+
+        <div id="users-tab" class="tab-content">
+          <div class="admin-section">
+            <h2>User Management</h2>
+            <div id="users-list" class="admin-list">
+              <!-- Users will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
